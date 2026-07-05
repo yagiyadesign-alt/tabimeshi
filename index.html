@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TabiMeshi | 旅先で、ちょっと特別な一軒を。</title>
+<meta name="description" content="旅行や特別な日の食事選びに、宿泊データと連動した生成AIが理由を示しながら1〜3件に絞り込む飲食店検索サービス「TabiMeshi」。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-heart-line" viewBox="0 0 24 24"><path d="M12 20.3s-7.3-4.4-9.9-8.9C.6 8.4 1.4 5 4.5 3.7 7 2.6 9.5 3.6 12 6.6 14.5 3.6 17 2.6 19.5 3.7 22.6 5 23.4 8.4 21.9 11.4 19.3 15.9 12 20.3 12 20.3z"/></symbol>
+  <symbol id="i-heart-filled" viewBox="0 0 24 24"><path d="M12 20.3s-7.3-4.4-9.9-8.9C.6 8.4 1.4 5 4.5 3.7 7 2.6 9.5 3.6 12 6.6 14.5 3.6 17 2.6 19.5 3.7 22.6 5 23.4 8.4 21.9 11.4 19.3 15.9 12 20.3 12 20.3z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L12 16.9 6.4 20l1.4-6.2-4.8-4.3 6.4-.6L12 3z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4V4z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="9" rx="4.5"/><rect x="7" y="11" width="10" height="9" rx="4.5"/></symbol>
+  <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M6 2v8a2 2 0 0 0 4 0V2M8 10v12M18 2c-2 1-3 3-3 6 0 2 1 3 3 3v9"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 11l17-7-7 17-2.5-7.5L4 11z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="9" r="2.6"/><path d="M15 20c0-2.8 1.2-4.7 3-5.6.8 0 3.5.3 4.5 5.6"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.1"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></symbol>
+  <symbol id="i-x-social" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 21v-8h3l.5-3.5H14V7.2c0-1 .5-1.7 1.9-1.7H18V2.3C17.6 2.2 16.4 2 15 2c-3 0-4.8 1.8-4.8 5v2.5H7V13h3.2v8H14z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10.5 9.3v5.4l5-2.7-5-2.7z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5l9 6 9-6"/></symbol>
+</svg>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="site-logo">
+      <img src="assets/img/logo_combined.png" alt="TabiMeshi" class="logo-combined">
+    </a>
+    <nav class="header-nav">
+      <a href="#" class="nav-icon-btn js-scope-link"><svg class="icon"><use href="#i-clock"/></svg>閲覧履歴</a>
+      <a href="#" class="nav-icon-btn js-scope-link"><svg class="icon"><use href="#i-heart-line"/></svg>お気に入り</a>
+      <a href="#" class="btn-pill-primary">ログイン</a>
+    </nav>
+    <button class="header-hamburger js-drawer-open" aria-label="メニューを開く">
+      <svg class="icon"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- SPドロワー -->
+<div class="drawer-overlay js-drawer-overlay"></div>
+<aside class="drawer js-drawer">
+  <button class="drawer-close js-drawer-close" aria-label="メニューを閉じる"><svg class="icon"><use href="#i-x"/></svg></button>
+  <a href="#" class="drawer-link js-scope-link"><svg class="icon"><use href="#i-heart-line"/></svg>お気に入り一覧</a>
+  <a href="#" class="drawer-link js-scope-link"><svg class="icon"><use href="#i-clock"/></svg>閲覧履歴</a>
+  <a href="#" class="drawer-link"><svg class="icon"><use href="#i-users"/></svg>ログイン</a>
+</aside>
+
+<main>
+  <!-- ヒーロー -->
+  <section class="hero">
+    <div class="hero-slides js-hero-slides">
+      <div class="hero-slide is-active" style="background-image:url('assets/img/gallery_dish1.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/img/gallery_dish2.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/img/card_tsuchitomi.jpg')"></div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">AI-GUIDED DINING</p>
+        <h1 class="hero-title">気負わずに、<br>ちゃんと特別な時間を。</h1>
+        <p class="hero-sub">宿泊先のデータと、あなたのその日の気分を合わせて、生成AIが1〜3件に絞ってご提案します。</p>
+        <div class="hero-actions">
+          <a href="#ai-chat" class="btn-primary-lg">AIに相談する<svg class="icon"><use href="#i-chevron-right"/></svg></a>
+          <a href="#normal-search" class="btn-secondary-lg">キーワードで絞り込む<svg class="icon"><use href="#i-chevron-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3つのステップ + AIチャット -->
+  <section class="steps-section" id="ai-chat">
+    <p class="eyebrow">How it works</p>
+    <h2 class="section-heading"><span class="accent" style="font-size:48px;">3</span>つのステップで、<span class="accent">今夜の一軒へ。</span></h2>
+
+    <div class="steps-grid">
+      <div class="step">
+        <span class="step-num">1</span>
+        <div>
+          <h3><span class="step-icon"><svg class="icon"><use href="#i-message"/></svg></span>AIに話しかける</h3>
+          <p>旅先、人数、気分、予算—思いついたことをそのまま話してください。難しい入力は必要ありません。</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div>
+          <h3><span class="step-icon"><svg class="icon"><use href="#i-link"/></svg></span>宿泊データと照合</h3>
+          <p>お泊まりの宿からの距離、その夜の混雑状況、天気まで加味して、AIが候補を絞り込みます。</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div>
+          <h3><span class="step-icon"><svg class="icon"><use href="#i-utensils"/></svg></span>1〜3件を提案</h3>
+          <p>「なぜこのお店か」の理由とともに提案します。選ぶのはあなたです。予約もそのままできます。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-panel">
+      <div class="chat-head">
+        <span class="chat-head-icon"><svg class="icon"><use href="#i-sparkle"/></svg></span>
+        <div>
+          <h2>AI に相談する</h2>
+          <span>Powered by TabiMeshi AI</span>
+        </div>
+      </div>
+      <div class="chat-body">
+        <div class="chat-messages js-chat-messages">
+          <div class="chat-bubble">
+            <span class="avatar"><svg class="icon" style="font-size:12px;"><use href="#i-sparkle"/></svg></span>
+            <p>こんにちは。今日はどんなお食事をお探しですか？旅行先や、人数、雰囲気など、気軽に教えてください。</p>
+          </div>
+        </div>
+      </div>
+      <div class="chat-chips">
+        <button class="chat-chip js-chat-chip">二人で記念日のディナーを</button>
+        <button class="chat-chip js-chat-chip">一人旅でカウンター席希望</button>
+        <button class="chat-chip js-chat-chip">家族で子ども連れOKの和食</button>
+        <button class="chat-chip js-chat-chip">旅先で地魚を楽しみたい</button>
+      </div>
+      <div class="chat-input-row">
+        <div class="chat-input-box">
+          <input type="text" id="chat-input" placeholder="旅先や人数、好みの雰囲気を教えてください…">
+          <button class="chat-send" id="chat-send" disabled aria-label="送信">
+            <svg class="icon"><use href="#i-send"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- フローティング再呼び出しボタン -->
+  <button class="chat-recall-fab js-chat-recall" aria-label="AIに相談する">
+    <svg class="icon" style="font-size:26px;"><use href="#i-sparkle"/></svg>
+  </button>
+
+  <!-- 通常検索エリア -->
+  <section class="search-section" id="normal-search">
+    <div class="search-section-inner">
+      <div class="search-heading">
+        <h2><svg class="icon"><use href="#i-search"/></svg>キーワードで絞り込む</h2>
+        <span>条件を絞って探したい方はこちら</span>
+      </div>
+      <div class="search-card">
+        <div class="search-row">
+          <div class="search-field">
+            <label for="s-area">エリア・地域</label>
+            <div class="input-wrap">
+              <svg class="icon"><use href="#i-map-pin"/></svg>
+              <input type="text" id="s-area" placeholder="例：京都、金沢、箱根…">
+            </div>
+          </div>
+          <div class="search-field">
+            <label for="s-keyword">キーワード</label>
+            <div class="input-wrap">
+              <svg class="icon"><use href="#i-search"/></svg>
+              <input type="text" id="s-keyword" placeholder="例：和食、カウンター席、個室…">
+            </div>
+          </div>
+          <div class="search-field">
+            <label for="s-time">予約時間帯</label>
+            <div class="input-wrap">
+              <svg class="icon"><use href="#i-clock"/></svg>
+              <select id="s-time">
+                <option value="">指定なし</option>
+                <option>ランチ（11:00〜14:00）</option>
+                <option>ディナー（17:00〜21:00）</option>
+                <option>深夜（21:00〜）</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="search-row">
+          <div class="search-field">
+            <label for="s-date">予約日</label>
+            <div class="input-wrap">
+              <svg class="icon"><use href="#i-calendar"/></svg>
+              <input type="text" id="s-date" placeholder="日付を選択" readonly class="js-date-trigger">
+            </div>
+          </div>
+          <div class="search-field">
+            <label for="s-people">人数</label>
+            <div class="input-wrap">
+              <svg class="icon"><use href="#i-users"/></svg>
+              <select id="s-people">
+                <option value="">指定なし</option>
+                <option>1名</option><option>2名</option><option>3名</option><option>4名</option><option>5名以上</option>
+              </select>
+            </div>
+          </div>
+          <div class="search-field" style="display:flex; align-items:flex-end;">
+            <button class="search-submit-btn js-press-only"><svg class="icon"><use href="#i-search"/></svg>検索する</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- おすすめ・近くのレストラン -->
+  <section class="recommend-section">
+    <div class="recommend-head">
+      <div>
+        <p class="eyebrow">Recommended</p>
+        <h2>おすすめ・近くのレストラン</h2>
+      </div>
+      <a href="#" class="js-press-only">すべてみる<svg class="icon"><use href="#i-chevron-right"/></svg></a>
+    </div>
+
+    <div class="card-grid">
+      <a href="shop.html" class="restaurant-card" data-shop="tomoshibi">
+        <div class="thumb">
+          <img src="assets/img/card_tomoshibi.jpg" alt="燈 -Tomoshibi- の店内写真">
+          <button class="fav-btn js-fav-btn" data-shop-id="tomoshibi" aria-label="お気に入りに追加">
+            <svg class="icon icon-heart-line"><use href="#i-heart-line"/></svg>
+            <svg class="icon icon-heart-filled"><use href="#i-heart-filled"/></svg>
+          </button>
+        </div>
+        <div class="info">
+          <p class="genre">和食・割烹</p>
+          <h3>燈 -Tomoshibi-</h3>
+          <p class="catch">旬のおまかせと、静かなカウンターで。</p>
+          <div class="meta-row">
+            <span>祇園四条駅<br>徒歩6分</span>
+            <span class="price">¥6,500〜8,000</span>
+          </div>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg><span class="score">4.7</span><span class="count">(284件)</span></div>
+        </div>
+      </a>
+
+      <a href="shop.html" class="restaurant-card" data-shop="sawada">
+        <div class="thumb">
+          <img src="assets/img/card_sawada.jpg" alt="炉端 さわ田 の店内写真">
+          <button class="fav-btn js-fav-btn" data-shop-id="sawada" aria-label="お気に入りに追加">
+            <svg class="icon icon-heart-line"><use href="#i-heart-line"/></svg>
+            <svg class="icon icon-heart-filled"><use href="#i-heart-filled"/></svg>
+          </button>
+        </div>
+        <div class="info">
+          <p class="genre">炉端焼き・地魚</p>
+          <h3>炉端 さわ田</h3>
+          <p class="catch">地元の漁師から届く魚を、炉端でただ焼く。</p>
+          <div class="meta-row">
+            <span>香林坊駅<br>徒歩3分</span>
+            <span class="price">¥5,000〜7,000</span>
+          </div>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg><span class="score">4.5</span><span class="count">(167件)</span></div>
+        </div>
+      </a>
+
+      <a href="shop.html" class="restaurant-card" data-shop="musubi">
+        <div class="thumb">
+          <img src="assets/img/card_musubi.jpg" alt="むすび 結 の店内写真">
+          <button class="fav-btn js-fav-btn" data-shop-id="musubi" aria-label="お気に入りに追加">
+            <svg class="icon icon-heart-line"><use href="#i-heart-line"/></svg>
+            <svg class="icon icon-heart-filled"><use href="#i-heart-filled"/></svg>
+          </button>
+        </div>
+        <div class="info">
+          <p class="genre">創作和食</p>
+          <h3>むすび 結</h3>
+          <p class="catch">地野菜と丁寧なコース。食べた後が軽い。</p>
+          <div class="meta-row">
+            <span>鎌倉駅<br>徒歩8分</span>
+            <span class="price">¥5,500〜7,500</span>
+          </div>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg><span class="score">4.6</span><span class="count">(211件)</span></div>
+        </div>
+      </a>
+
+      <a href="shop.html" class="restaurant-card" data-shop="asahi">
+        <div class="thumb">
+          <img src="assets/img/card_asahi.jpg" alt="四季 あさひ の店内写真">
+          <button class="fav-btn js-fav-btn" data-shop-id="asahi" aria-label="お気に入りに追加">
+            <svg class="icon icon-heart-line"><use href="#i-heart-line"/></svg>
+            <svg class="icon icon-heart-filled"><use href="#i-heart-filled"/></svg>
+          </button>
+        </div>
+        <div class="info">
+          <p class="genre">懐石・日本料理</p>
+          <h3>四季 あさひ</h3>
+          <p class="catch">山の景色とともに、季節の懐石を静かに。</p>
+          <div class="meta-row">
+            <span>箱根湯本駅<br>徒歩5分</span>
+            <span class="price">¥5,000〜7,000</span>
+          </div>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg><span class="score">4.8</span><span class="count">(143件)</span></div>
+        </div>
+      </a>
+
+      <a href="shop.html" class="restaurant-card" data-shop="tsuchitomi">
+        <div class="thumb">
+          <img src="assets/img/card_tsuchitomi.jpg" alt="土と実 -Tsuchi to Mi- の店内写真">
+          <button class="fav-btn js-fav-btn" data-shop-id="tsuchitomi" aria-label="お気に入りに追加">
+            <svg class="icon icon-heart-line"><use href="#i-heart-line"/></svg>
+            <svg class="icon icon-heart-filled"><use href="#i-heart-filled"/></svg>
+          </button>
+        </div>
+        <div class="info">
+          <p class="genre">野菜料理・自然食</p>
+          <h3>土と実 -Tsuchi to Mi-</h3>
+          <p class="catch">路地の奥で、土地の野菜と向き合う夜。</p>
+          <div class="meta-row">
+            <span>今出川駅<br>徒歩10分</span>
+            <span class="price">¥6,500〜8,000</span>
+          </div>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg><span class="score">4.4</span><span class="count">(98件)</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+</main>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo">
+          <img src="assets/img/logo_combined_white.png" alt="TabiMeshi" class="logo-combined">
+        </a>
+        <p>旅と食をつなぐ、AIガイドの飲食店検索サービス。<br>宿泊施設予約プラットフォームが運営しています。</p>
+        <div class="footer-sns">
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="X"><svg class="icon"><use href="#i-x-social"/></svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"/></svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="YouTube"><svg class="icon"><use href="#i-youtube"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>サービス</h3>
+          <ul><li><a href="#" class="js-scope-link">使い方</a></li><li><a href="#" class="js-scope-link">AIについて</a></li><li><a href="#" class="js-scope-link">宿泊連携</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h3>探す</h3>
+          <ul><li><a href="#" class="js-scope-link">エリアから探す</a></li><li><a href="#" class="js-scope-link">ジャンルから探す</a></li><li><a href="#" class="js-scope-link">お気に入り一覧</a></li><li><a href="#" class="js-scope-link">閲覧履歴</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h3>サポート</h3>
+          <ul><li><a href="#" class="js-scope-link">よくある質問</a></li><li><a href="#" class="js-scope-link">お問い合わせ</a></li><li><a href="#" class="js-scope-link">プライバシーポリシー</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2024 TabiMeshi. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- トースト -->
+<div class="toast js-toast"></div>
+
+<!-- カレンダーモーダル(簡易) -->
+<div class="modal-overlay js-calendar-modal">
+  <div class="modal-box" style="max-width:320px;">
+    <h3 style="margin-bottom:16px;">予約日を選択</h3>
+    <input type="date" class="js-calendar-input" style="width:100%;height:44px;border:1px solid var(--color-border);border-radius:8px;padding:0 12px;font-family:inherit;font-size:14px;">
+    <button class="modal-close-btn js-calendar-confirm" style="margin-top:20px;">決定</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

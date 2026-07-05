@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>燈 -Tomoshibi- | TabiMeshi</title>
+<meta name="description" content="京都・祇園、旬のおまかせと静かなカウンターの一軒「燈 -Tomoshibi-」。AIがこのお店を選んだ理由とともにご紹介します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="has-fixed-bar">
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-heart-line" viewBox="0 0 24 24"><path d="M12 20.3s-7.3-4.4-9.9-8.9C.6 8.4 1.4 5 4.5 3.7 7 2.6 9.5 3.6 12 6.6 14.5 3.6 17 2.6 19.5 3.7 22.6 5 23.4 8.4 21.9 11.4 19.3 15.9 12 20.3 12 20.3z"/></symbol>
+  <symbol id="i-heart-filled" viewBox="0 0 24 24"><path d="M12 20.3s-7.3-4.4-9.9-8.9C.6 8.4 1.4 5 4.5 3.7 7 2.6 9.5 3.6 12 6.6 14.5 3.6 17 2.6 19.5 3.7 22.6 5 23.4 8.4 21.9 11.4 19.3 15.9 12 20.3 12 20.3z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L12 16.9 6.4 20l1.4-6.2-4.8-4.3 6.4-.6L12 3z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4V4z"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="9" rx="4.5"/><rect x="7" y="11" width="10" height="9" rx="4.5"/></symbol>
+  <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M6 2v8a2 2 0 0 0 4 0V2M8 10v12M18 2c-2 1-3 3-3 6 0 2 1 3 3 3v9"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 11l17-7-7 17-2.5-7.5L4 11z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="9" r="2.6"/><path d="M15 20c0-2.8 1.2-4.7 3-5.6.8 0 3.5.3 4.5 5.6"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.4M8.2 13.2l7.6 4.4"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.1"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></symbol>
+  <symbol id="i-x-social" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 21v-8h3l.5-3.5H14V7.2c0-1 .5-1.7 1.9-1.7H18V2.3C17.6 2.2 16.4 2 15 2c-3 0-4.8 1.8-4.8 5v2.5H7V13h3.2v8H14z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10.5 9.3v5.4l5-2.7-5-2.7z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5l9 6 9-6"/></symbol>
+</svg>
+
+<!-- ヘッダー -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="site-logo">
+      <img src="assets/img/logo_combined.png" alt="TabiMeshi" class="logo-combined">
+    </a>
+    <nav class="header-nav">
+      <a href="#" class="nav-icon-btn js-scope-link"><svg class="icon"><use href="#i-clock"/></svg>閲覧履歴</a>
+      <a href="#" class="nav-icon-btn js-scope-link"><svg class="icon"><use href="#i-heart-line"/></svg>お気に入り</a>
+      <a href="#" class="btn-pill-primary">ログイン</a>
+    </nav>
+    <button class="header-hamburger js-drawer-open" aria-label="メニューを開く">
+      <svg class="icon"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- SPドロワー -->
+<div class="drawer-overlay js-drawer-overlay"></div>
+<aside class="drawer js-drawer">
+  <button class="drawer-close js-drawer-close" aria-label="メニューを閉じる"><svg class="icon"><use href="#i-x"/></svg></button>
+  <a href="#" class="drawer-link js-scope-link"><svg class="icon"><use href="#i-heart-line"/></svg>お気に入り一覧</a>
+  <a href="#" class="drawer-link js-scope-link"><svg class="icon"><use href="#i-clock"/></svg>閲覧履歴</a>
+  <a href="#" class="drawer-link"><svg class="icon"><use href="#i-users"/></svg>ログイン</a>
+</aside>
+
+<main>
+  <a href="index.html" class="detail-back"><svg class="icon"><use href="#i-chevron-left"/></svg>一覧に戻る</a>
+
+  <!-- メインビジュアルギャラリー -->
+  <div class="detail-gallery">
+    <div class="gallery-viewport">
+      <div class="gallery-track js-gallery-track">
+        <img src="assets/img/card_tomoshibi.jpg" alt="燈 -Tomoshibi- 料理写真1">
+        <img src="assets/img/gallery_interior.jpg" alt="燈 -Tomoshibi- 店内写真">
+        <img src="assets/img/gallery_table.jpg" alt="燈 -Tomoshibi- 自然光の食卓">
+      </div>
+      <button class="gallery-arrow prev js-gallery-prev" aria-label="前の写真"><svg class="icon"><use href="#i-chevron-left"/></svg></button>
+      <button class="gallery-arrow next js-gallery-next" aria-label="次の写真"><svg class="icon"><use href="#i-chevron-right"/></svg></button>
+      <div class="gallery-dots js-gallery-dots"></div>
+    </div>
+  </div>
+
+  <!-- 基本情報 -->
+  <div class="detail-basic">
+    <div>
+      <span class="tag-pill">和食・割烹</span>
+      <h1>燈 -Tomoshibi-</h1>
+      <p class="romaji">Tomoshibi</p>
+      <div class="meta-line">
+        <span class="rating"><svg class="icon"><use href="#i-star"/></svg> 4.7 (284件)</span>
+        <span><svg class="icon"><use href="#i-map-pin"/></svg> 京都・祇園</span>
+        <span>祇園四条駅 徒歩6分</span>
+      </div>
+    </div>
+    <div class="detail-basic-actions">
+      <button class="icon-btn-outline js-share-btn"><svg class="icon"><use href="#i-share"/></svg>シェア</button>
+      <button class="icon-btn-outline js-fav-btn" data-shop-id="tomoshibi" aria-label="お気に入りに追加">
+        <svg class="icon icon-heart-line"><use href="#i-heart-line"/></svg>
+        <svg class="icon icon-heart-filled"><use href="#i-heart-filled"/></svg>
+        お気に入り
+      </button>
+    </div>
+  </div>
+
+  <div class="detail-layout">
+    <div class="detail-main">
+
+      <!-- AIがこのお店を選んだ理由 -->
+      <section class="ai-reason">
+        <div class="ai-reason-head">
+          <span class="icon-badge"><svg class="icon"><use href="#i-sparkle"/></svg></span>
+          <div>
+            <h2>AIがこのお店を選んだ理由</h2>
+            <span>TabiMeshi AI · パーソナライズド提案</span>
+          </div>
+        </div>
+        <div class="ai-reason-body">
+          <p class="js-clamp-text" data-full-text="今回お泊まりの宿から徒歩圏内で、静かな夜を過ごしたいというご希望に自然と寄り添うお店です。旬の野菜を主役にした季節のおまかせコースは、素材の持ち味を生かした丁寧な仕事ぶりが印象的。騒がしくない落ち着いたカウンターで、二人の会話がゆっくり続く夜になると思います。">
+            今回お泊まりの宿から徒歩圏内で、静かな夜を過ごしたいというご希望に自然と寄り添うお店です。旬の野菜を主役にした季節のおまかせコースは、素材の持ち味を生かした丁寧な仕事ぶりが印象的。騒がしくない落ち着いたカウンターで、二人の会話がゆっくり続く夜になると思います。
+          </p>
+          <button class="js-clamp-toggle" style="display:none; background:none; border:none; color:var(--color-primary); font-size:13px; margin:-14px 0 20px; padding:0; cursor:pointer;">もっと見る</button>
+          <div class="ai-reason-tags">
+            <span>個室あり</span><span>記念日歓迎</span><span>落ち着いた空間</span>
+          </div>
+          <p class="ai-reason-note">※ この提案はお客様のご滞在先・ご希望・当日の状況をもとに生成されました。</p>
+        </div>
+      </section>
+
+      <!-- クチコミ -->
+      <section class="reviews-section">
+        <div class="section-head">
+          <h2><svg class="icon"><use href="#i-star"/></svg>クチコミ <span class="rating-summary"><span class="score">4.7</span> ・284件の評価</span></h2>
+          <a href="#" class="see-all js-reviews-toggle">すべてみる<svg class="icon"><use href="#i-chevron-right"/></svg></a>
+        </div>
+        <div class="reviews-list js-reviews-list">
+          <div class="review-card">
+            <div class="review-head">
+              <span class="review-avatar">M</span>
+              <div><div class="review-name">M.T.</div></div>
+              <span class="review-date">2024年3月</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p>旅行の夜に一人で訪れました。カウンター越しに店主と話しながら、ゆっくり食べられて。こういう夜が求めていたものでした。</p>
+          </div>
+          <div class="review-card">
+            <div class="review-head">
+              <span class="review-avatar">K</span>
+              <div><div class="review-name">K.Y.</div></div>
+              <span class="review-date">2024年2月</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p>記念日に利用。騒がしくなく、料理もちょうどいい量感で、二人の会話がずっと続く夜になりました。</p>
+          </div>
+          <div class="review-card">
+            <div class="review-head">
+              <span class="review-avatar">H</span>
+              <div><div class="review-name">H.O.</div></div>
+              <span class="review-date">2024年1月</span>
+              <span class="review-stars">★★★★☆</span>
+            </div>
+            <p>素材の良さがちゃんと伝わってくる丁寧な仕事。格式張らずに食べられるのも好みでした。</p>
+          </div>
+          <div class="review-card is-hidden">
+            <div class="review-head">
+              <span class="review-avatar">S</span>
+              <div><div class="review-name">S.N.</div></div>
+              <span class="review-date">2023年12月</span>
+              <span class="review-stars">★★★★★</span>
+            </div>
+            <p>出張の合間に一人で。カウンターから見える手元の所作が丁寧で、旅の疲れがほどける時間でした。</p>
+          </div>
+          <div class="review-card is-hidden">
+            <div class="review-head">
+              <span class="review-avatar">Y</span>
+              <div><div class="review-name">Y.A.</div></div>
+              <span class="review-date">2023年11月</span>
+              <span class="review-stars">★★★★☆</span>
+            </div>
+            <p>宿から歩いてすぐなのがうれしい。季節のおまかせは品数も量もちょうどよく、静かに食事を楽しめました。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 概要・店舗情報 -->
+      <section class="overview-section">
+        <h2>概要・店舗情報</h2>
+        <dl class="overview-grid">
+          <div><dt>ジャンル</dt><dd>和食・割烹</dd></div>
+          <div><dt>予算（目安）</dt><dd>¥6,500〜8,000</dd></div>
+          <div><dt>評価</dt><dd>4.7 (284件)</dd></div>
+        </dl>
+        <div class="overview-tags">
+          <span>個室あり</span><span>記念日歓迎</span><span>落ち着いた空間</span>
+        </div>
+      </section>
+
+      <!-- 店内・料理 -->
+      <section class="photo-section">
+        <h2>店内・料理</h2>
+        <div class="photo-grid">
+          <div class="wide"><img src="assets/img/gallery_interior.jpg" alt="店内の様子"></div>
+          <img src="assets/img/gallery_table.jpg" alt="自然光の食卓">
+          <img src="assets/img/gallery_dish1.jpg" alt="器と料理">
+          <img src="assets/img/gallery_dish2.jpg" alt="器と料理">
+          <img src="assets/img/gallery_counter.jpg" alt="カウンター席">
+        </div>
+      </section>
+
+      <!-- コース・メニュー概要 -->
+      <section class="menu-section">
+        <h2>コース・メニュー概要</h2>
+        <div class="menu-list">
+          <div class="menu-row">
+            <div><h3>季節のおまかせコース</h3><p>旬の食材を軸に、その日の仕入れで変わる全8品</p></div>
+            <span class="price">¥7,500</span>
+          </div>
+          <div class="menu-row">
+            <div><h3>おすすめ単品コース（5品）</h3><p>ゆっくり食べたい方に。軽めの構成でも満足感あり</p></div>
+            <span class="price">¥5,800</span>
+          </div>
+          <div class="menu-row">
+            <div><h3>ドリンクペアリング</h3><p>日本酒・自然派ワインから季節のノンアルコールまで</p></div>
+            <span class="price">¥2,500〜</span>
+          </div>
+        </div>
+        <p class="menu-note">※ 料金はサービス料・税込み。仕入れにより変動する場合があります。</p>
+      </section>
+
+      <!-- タブ：メニュー・料金（詳細） / アクセス -->
+      <section class="detail-tabs">
+        <div class="tab-buttons">
+          <button class="tab-btn is-active js-tab-btn" data-tab="menu">メニュー・料金（詳細）</button>
+          <button class="tab-btn js-tab-btn" data-tab="access">アクセス</button>
+        </div>
+        <div class="tab-panel is-active" data-tab-panel="menu">
+          <div class="menu-list">
+            <div class="menu-row">
+              <div><h3>特選おまかせ（10品）</h3><p>その日最上の仕入れで構成する完全おまかせコース</p></div>
+              <span class="price">¥9,800</span>
+            </div>
+            <div class="menu-row">
+              <div><h3>季節のおまかせコース</h3><p>旬の食材を軸に、その日の仕入れで変わる全8品</p></div>
+              <span class="price">¥7,500</span>
+            </div>
+            <div class="menu-row">
+              <div><h3>おすすめ単品コース（5品）</h3><p>ゆっくり食べたい方に。軽めの構成でも満足感あり</p></div>
+              <span class="price">¥5,800</span>
+            </div>
+            <div class="menu-row">
+              <div><h3>ドリンクペアリング</h3><p>日本酒・自然派ワインから季節のノンアルコールまで</p></div>
+              <span class="price">¥2,500〜</span>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-tab-panel="access">
+          <div class="access-info">
+            <div class="access-map-placeholder"><svg class="icon" style="font-size:28px;"><use href="#i-map-pin"/></svg>&nbsp;地図（京都市東山区 祇園四条駅 徒歩6分）</div>
+            <div class="shop-info-row"><dt>住所</dt><dd>京都市東山区 祇園四条駅 徒歩6分</dd></div>
+            <div class="shop-info-row"><dt>電話番号</dt><dd>075-000-0000（予約専用）</dd></div>
+            <div class="shop-info-row"><dt>営業時間</dt><dd>17:00〜23:00（L.O. 21:00）</dd></div>
+            <div class="shop-info-row"><dt>定休日</dt><dd>毎週火曜・年末年始</dd></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- サイドバー -->
+    <aside class="detail-sidebar">
+      <div class="reserve-card">
+        <button class="reserve-card-close js-close-reserve-sheet" aria-label="閉じる"><svg class="icon"><use href="#i-x"/></svg></button>
+        <div class="reserve-price-row">
+          <span class="price">¥6,500〜8,000</span>
+          <span class="rating"><svg class="icon"><use href="#i-star"/></svg>4.7</span>
+        </div>
+        <p class="reserve-price-note">お一人あたり目安・税サービス込み</p>
+        <div class="reserve-share-fav">
+          <button class="icon-btn-outline js-share-btn"><svg class="icon"><use href="#i-share"/></svg>シェア</button>
+          <button class="icon-btn-outline js-fav-btn" data-shop-id="tomoshibi" aria-label="お気に入りに追加">
+            <svg class="icon icon-heart-line"><use href="#i-heart-line"/></svg>
+            <svg class="icon icon-heart-filled"><use href="#i-heart-filled"/></svg>
+            お気に入り
+          </button>
+        </div>
+        <div class="reserve-fields">
+          <div class="field" data-field="date">
+            <label for="r-date">ご利用日</label>
+            <input type="text" id="r-date" placeholder="日付を選択" readonly class="js-date-trigger">
+            <p class="error-msg">利用日を選択してください</p>
+          </div>
+          <div class="field" data-field="people">
+            <label for="r-people">人数</label>
+            <select id="r-people">
+              <option value="">選択してください</option>
+              <option>1名</option><option>2名</option><option>3名</option><option>4名</option><option>5名以上</option>
+            </select>
+            <p class="error-msg">人数を選択してください</p>
+          </div>
+        </div>
+        <div class="reserve-cta">
+          <button class="btn-primary-lg js-reserve-btn">空席を確認して予約する</button>
+          <button class="btn-secondary-lg js-contact-btn">お店に問い合わせる</button>
+        </div>
+        <div class="reserve-notes">
+          <div><svg class="icon"><use href="#i-check-circle"/></svg>即時予約確定</div>
+          <div><svg class="icon"><use href="#i-users"/></svg>2〜6名まで対応</div>
+          <div><svg class="icon"><use href="#i-info"/></svg>キャンセルは前日まで無料</div>
+        </div>
+      </div>
+
+      <div class="shop-info-card">
+        <h3>店舗詳細情報</h3>
+        <hr>
+        <div class="shop-info-row"><dt>住所</dt><dd>京都市東山区<br>祇園四条駅 徒歩6分</dd></div>
+        <div class="shop-info-row"><dt>電話番号</dt><dd>075-000-0000（予約専用）</dd></div>
+        <div class="shop-info-row"><dt>営業時間</dt><dd>17:00〜23:00（L.O. 21:00）</dd></div>
+        <div class="shop-info-row"><dt>定休日</dt><dd>毎週火曜・年末年始</dd></div>
+        <div class="shop-info-row"><dt>座席数</dt><dd>全20席（カウンター6席、個室3室）</dd></div>
+        <div class="shop-info-row" style="margin-bottom:0;"><dt>決済方法</dt><dd>現金・カード・QRコード対応</dd></div>
+      </div>
+
+      <div class="other-picks">
+        <h3>ほかのAIピックを見る</h3>
+        <a href="shop.html" class="pick-card">
+          <img src="assets/img/card_sawada.jpg" alt="炉端 さわ田">
+          <div class="info"><h4>炉端 さわ田</h4><p class="genre">炉端焼き・地魚</p><p class="price">¥5,000〜7,000</p></div>
+        </a>
+        <a href="shop.html" class="pick-card">
+          <img src="assets/img/card_musubi.jpg" alt="むすび 結">
+          <div class="info"><h4>むすび 結</h4><p class="genre">創作和食</p><p class="price">¥5,500〜7,500</p></div>
+        </a>
+        <a href="shop.html" class="pick-card">
+          <img src="assets/img/card_asahi.jpg" alt="四季 あさひ">
+          <div class="info"><h4>四季 あさひ</h4><p class="genre">懐石・日本料理</p><p class="price">¥7,000〜8,000</p></div>
+        </a>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="site-logo">
+          <img src="assets/img/logo_combined_white.png" alt="TabiMeshi" class="logo-combined">
+        </a>
+        <p>旅と食をつなぐ、AIガイドの飲食店検索サービス。<br>宿泊施設予約プラットフォームが運営しています。</p>
+        <div class="footer-sns">
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="X"><svg class="icon"><use href="#i-x-social"/></svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"/></svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="YouTube"><svg class="icon"><use href="#i-youtube"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>サービス</h3>
+          <ul><li><a href="#" class="js-scope-link">使い方</a></li><li><a href="#" class="js-scope-link">AIについて</a></li><li><a href="#" class="js-scope-link">宿泊連携</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h3>探す</h3>
+          <ul><li><a href="#" class="js-scope-link">エリアから探す</a></li><li><a href="#" class="js-scope-link">ジャンルから探す</a></li><li><a href="#" class="js-scope-link">お気に入り一覧</a></li><li><a href="#" class="js-scope-link">閲覧履歴</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h3>サポート</h3>
+          <ul><li><a href="#" class="js-scope-link">よくある質問</a></li><li><a href="#" class="js-scope-link">お問い合わせ</a></li><li><a href="#" class="js-scope-link">プライバシーポリシー</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2024 TabiMeshi. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- SP固定予約バー -->
+<div class="sp-fixed-bar">
+  <div class="price-block">
+    <div class="label">お一人あたり</div>
+    <div class="price">¥6,500〜8,000</div>
+  </div>
+  <button class="btn-primary-lg js-open-reserve-sheet">空席を確認する</button>
+</div>
+<div class="reserve-sheet-overlay js-reserve-sheet-overlay"></div>
+
+<!-- トースト -->
+<div class="toast js-toast"></div>
+
+<!-- カレンダーモーダル -->
+<div class="modal-overlay js-calendar-modal">
+  <div class="modal-box" style="max-width:320px;">
+    <h3 style="margin-bottom:16px;">ご利用日を選択</h3>
+    <input type="date" class="js-calendar-input" style="width:100%;height:44px;border:1px solid var(--color-border);border-radius:8px;padding:0 12px;font-family:inherit;font-size:14px;">
+    <button class="modal-close-btn js-calendar-confirm" style="margin-top:20px;">決定</button>
+  </div>
+</div>
+
+<!-- 予約完了モーダル -->
+<div class="modal-overlay js-reserve-modal">
+  <div class="modal-box">
+    <div class="modal-icon"><svg class="icon" style="font-size:28px;"><use href="#i-check-circle"/></svg></div>
+    <h3>仮予約を受け付けました</h3>
+    <p>店舗からの確定連絡をお待ちください。（本デモでは実際の予約は行われません）</p>
+    <button class="modal-close-btn js-reserve-modal-close">閉じる</button>
+  </div>
+</div>
+
+<!-- お問い合わせモーダル -->
+<div class="modal-overlay js-contact-modal">
+  <div class="modal-box">
+    <div class="modal-icon"><svg class="icon" style="font-size:26px;"><use href="#i-mail"/></svg></div>
+    <h3>お店に問い合わせる</h3>
+    <p>075-000-0000（予約専用）へお電話いただくか、下記フォームよりお問い合わせください。（本デモではメールは送信されません）</p>
+    <button class="modal-close-btn js-contact-modal-close">閉じる</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
