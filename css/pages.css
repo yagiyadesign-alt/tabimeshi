@@ -238,6 +238,7 @@
 }
 .chat-input-box input {
   flex: 1;
+  min-width: 0;
   background: transparent;
   border: none;
   outline: none;
@@ -586,6 +587,23 @@
   }
   .restaurant-card {
     scroll-snap-align: start;
+  }
+}
+
+/* iPhone SEなど幅の狭い端末向け */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 26px;
+  }
+}
+
+/* 「3つのステップで、今夜の一軒へ。」の改行位置をSPで固定する */
+.section-heading .sp-break {
+  display: none;
+}
+@media (max-width: 860px) {
+  .section-heading .sp-break {
+    display: block;
   }
 }
 
