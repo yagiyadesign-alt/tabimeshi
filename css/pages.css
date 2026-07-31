@@ -49,7 +49,8 @@
   margin: 0 0 12px;
 }
 .hero-title {
-  font-size: 44px;
+  /* 画面幅に応じて連続的にサイズが変わるため、端末幅ごとに折り返し方が破綻しにくい */
+  font-size: clamp(26px, 4vw + 10px, 44px);
   line-height: 1.35;
   font-weight: 500;
   margin: 0 0 16px;
@@ -544,12 +545,31 @@
 
 /* ---------- レスポンシブ（トップページ） ---------- */
 @media (max-width: 860px) {
-  .hero,
-  .hero .container {
-    min-height: 560px;
+  /* SPでは「上部：写真／下部：ダークパネルにコピー」の2段構成にする（Figma更新分） */
+  .hero {
+    min-height: auto;
+    background: var(--color-dark);
   }
-  .hero-title {
-    font-size: 32px;
+  .hero-slides,
+  .hero-overlay {
+    inset: 0 0 auto 0;
+    height: 280px;
+  }
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(44, 31, 20, 0) 45%, rgba(44, 31, 20, 1) 100%);
+  }
+  .hero .container {
+    display: block;
+    min-height: auto;
+    padding-top: 300px;
+    padding-bottom: 40px;
+  }
+  .hero-actions {
+    flex-direction: column;
+  }
+  .hero-actions > a {
+    width: 100%;
+    justify-content: center;
   }
   .steps-grid {
     grid-template-columns: 1fr;
@@ -587,13 +607,6 @@
   }
   .restaurant-card {
     scroll-snap-align: start;
-  }
-}
-
-/* iPhone SEなど幅の狭い端末向け */
-@media (max-width: 400px) {
-  .hero-title {
-    font-size: 26px;
   }
 }
 

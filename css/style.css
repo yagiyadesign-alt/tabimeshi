@@ -347,7 +347,7 @@ ul {
   font-weight: 400;
   color: var(--color-dark);
   margin: 12px 0 0;
-  font-size: 32px;
+  font-size: clamp(24px, 3.5vw + 12px, 32px);
 }
 .section-heading .accent {
   color: var(--color-primary);
